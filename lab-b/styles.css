@@ -1,3 +1,136 @@
 body {
-  background-color: #f3fff3;
+  background-color: #ede5b7;
+  color: #edead5;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 2rem;
+
+}
+
+#Lista {
+  background-color: #36241b;
+  border-style: solid;
+  border-color: darkblue;
+  border-radius: 20px;
+  min-height: 40vh;
+  width: 40vw;
+  margin: 150px auto 0;
+  padding: 24px;
+}
+
+#search {
+  margin-top: 10px;
+  margin-left: 30px;
+}
+
+#search > input {
+  width: 90%;
+  padding: 10px 12px;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: #ede5b7;
+  font-size: 1rem;
+}
+
+#search > input:focus {
+  outline: none;
+  border-color: #edead5;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  background-color: #241812;
+  border-style: solid;
+  border-color: #ede5b7;
+  border-width: 1px;
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  gap: 20px;
+}
+
+.task span {
+  flex: 1;
+  font-size: 1rem;
+}
+
+.task button {
+  background-color: #36241b;
+  color: #ede5b7;
+  border-style: solid;
+  border-color: #ede5b7;
+  border-width: 1px;
+  border-radius: 10px;
+  padding: 4px 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.task button:hover {
+  background-color: grey;
+}
+
+#dodaj {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid white;
+}
+
+#new_task {
+  flex: 1;
+  margin-left: 20px;
+  padding: 10px 12px;
+  background-color: #241812;
+  border-style: solid;
+  border-color: #ede5b7;
+  border-width: 1px;
+  border-radius: 10px;
+  color: #edead5;
+  font-size: 0.95rem;
+}
+
+#new_task::placeholder {
+  color: #edead5;
+}
+
+
+#new_date {
+  padding: 10px 8px;
+  background-color: #241812;
+  border-style: solid;
+  border-color: #ede5b7;
+  border-width: 1px;
+  border-radius: 10px;
+  color: #edead5;
+  font-size: 0.9rem;
+}
+
+#button {
+  padding: 10px 18px;
+  background-color: #241812;
+  color: #edead5;
+  border-style: solid;
+  border-color: #ede5b7;
+  border-width: 1px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.90rem;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+}
+
+#error {
+  color: #ff6b6b;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  margin-left: 20px;
 }
