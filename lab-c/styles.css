@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #e3d1ba;
+  font-family: sans-serif;
+  padding: 12px;
+}
+
+h2, h3 {
+  margin-bottom: 8px;
+  color: #4a3520;
+}
+
+#top-section {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+#left_side {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 340px;
+  flex-shrink: 0;
+}
+
+#map {
+  width: 100%;
+  height: 250px;
+  border: 3px solid lightsalmon;
+  border-radius: 8px;
+}
+
+#buttons {
+  display: flex;
+  gap: 12px;
+}
+
+#buttons button {
+  flex: 1;
+  padding: 8px 0;
+  border-radius: 20px;
+  border: none;
+  background-color: #d9bd9a;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#buttons button:hover {
+  background-color: #b89a72;
+}
+
+#map-canvas {
+  display: none;
+  border: 2px solid #b89a72;
+  border-radius: 8px;
+  width: 100%;
+  height: auto;
+}
+
+#right_side {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+#puzzle-table {
+  background-color: #d9bd9a;
+  border: 2px solid #4a3520;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#puzzle-pieces {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+#board-section {
+  background-color: #d9bd9a;
+  border: 2px solid #4a3520;
+  border-radius: 10px;
+  padding: 10px;
+  align-self: flex-start;
+}
+
+#puzzle-board {
+  display: grid;
+  grid-template-columns: repeat(4, 120px);
+  grid-template-rows: repeat(4, 120px);
+  gap: 2px;
+  background-color: #b89a72;
+  border: 2px solid #4a3520;
+  border-radius: 6px;
+  padding: 2px;
+}
+
+.puzzle-piece {
+  width: 120px;
+  height: 120px;
+  cursor: grab;
+  border: 2px solid #4a3520;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.puzzle-piece canvas {
+  display: block;
+  width: 120px;
+  height: 120px;
+}
+
+.puzzle-piece.dragging {
+  opacity: 0.4;
+  cursor: grabbing;
+}
+
+.puzzle-slot {
+  width: 120px;
+  height: 120px;
+  background-color: rgba(255,255,255,0.2);
+  border: 2px dashed #7a5c38;
+  border-radius: 4px;
+}
+
+.puzzle-slot.drag-over {
+  background-color: rgba(255, 200, 100, 0.5);
+  border-color: #ff8800;
+}
