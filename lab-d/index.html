@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jakub Jankowicz 57898 - PTW LAB D</title>
+
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+
+<div id="main">
+
+    <div id="top">
+        <h1>Pogoda</h1>
+    </div>
+
+    <div id="inputy">
+        <input type="text" id="miasto" placeholder="Wpisz miasto...">
+        <button id="przycisk">Sprawdź</button>
+    </div>
+
+    <div id="wyniki" class="ukryty">
+
+        <div id="miasto-nazwa"></div>
+
+        <div id="opis-pogody">
+            <div id="ikona-i-temp">
+                <img id="ikona" src="" alt="ikona pogody">
+                <span id="temperatura"></span>
+            </div>
+            <div id="szczegoly">
+                <p id="opis"></p>
+                <p id="wilgotnosc"></p>
+                <p id="wiatr"></p>
+            </div>
+        </div>
+
+        <div id="godziny-nav">
+            <button id="lewo">&larr;</button>
+            <span id="godzina-label"></span>
+            <button id="prawo">&rarr;</button>
+        </div>
+
+    </div>
+
+    <div id="blad" class="ukryty">
+        <p>Nie znaleziono miasta</p>
+    </div>
+
+</div>
+
+</body>
+</html>

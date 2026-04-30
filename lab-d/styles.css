@@ -1,0 +1,216 @@
+body {
+  background-color: #1a1a2e;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+
+#main {
+  border: solid rgba(255,255,255,0.25) 1px;
+  border-radius: 24px;
+  height: 90vh;
+  width: 20vw;
+  min-width: 320px;
+  margin: 30px auto;
+
+  background: linear-gradient(160deg, #d9bd9a 0%, #b89a72 100%);
+
+  transition: background 1s ease;
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+#main.pogoda-slonecznie {
+  background: linear-gradient(160deg, #f7d47a 0%, #f0a500 50%, #e07b00 100%);
+}
+
+#main.pogoda-noc {
+  background: linear-gradient(160deg, #0f0c29 0%, #1a1a5e 50%, #24243e 100%);
+}
+
+#main.pogoda-male-zachmurzenie {
+  background: linear-gradient(160deg, #74b9ff 0%, #0984e3 50%, #2d6fa8 100%);
+}
+
+#main.pogoda-zachmurzenie {
+  background: linear-gradient(160deg, #b2bec3 0%, #636e72 50%, #2d3436 100%);
+}
+
+#main.pogoda-deszcz {
+  background: linear-gradient(160deg, #4a6fa5 0%, #2c3e6b 50%, #1a2540 100%);
+}
+
+#main.pogoda-burza {
+  background: linear-gradient(160deg, #2c2c54 0%, #1a1a3e 50%, #0d0d1a 100%);
+}
+
+#main.pogoda-snieg {
+  background: linear-gradient(160deg, #dfe6e9 0%, #b2bec3 50%, #74b9ff 100%);
+}
+
+#main.pogoda-mgla {
+  background: linear-gradient(160deg, #a8a8a8 0%, #636e72 50%, #2d3436 100%);
+}
+
+#top {
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#inputy {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  padding: 0 15px 15px;
+}
+
+#inputy input {
+  flex: 1;
+  font-size: 14px;
+  background-color: rgba(255,255,255,0.25);
+  color: white;
+  border: solid rgba(255,255,255,0.4) 1px;
+  border-radius: 12px;
+  padding: 8px 12px;
+  backdrop-filter: blur(10px);
+  outline: none;
+}
+
+#inputy input::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+
+#inputy button {
+  background-color: rgba(255,255,255,0.25);
+  color: white;
+  border: solid rgba(255,255,255,0.4) 1px;
+  border-radius: 12px;
+  cursor: pointer;
+  padding: 8px 14px;
+  white-space: nowrap;
+  backdrop-filter: blur(10px);
+  transition: background 0.2s;
+}
+
+#inputy button:hover {
+  background-color: rgba(255,255,255,0.4);
+}
+
+#wyniki {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 10px;
+  overflow: hidden;
+}
+
+#miasto-nazwa {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.3);
+}
+
+#opis-pogody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  justify-content: center;
+}
+
+#ikona-i-temp {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#ikona {
+  width: 80px;
+  height: 80px;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+}
+
+#temperatura {
+  font-size: 64px;
+  font-weight: 200;
+  color: white;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  letter-spacing: -2px;
+}
+
+#szczegoly {
+  text-align: center;
+  color: rgba(255,255,255,0.9);
+}
+
+#szczegoly p {
+  margin: 5px 0;
+  font-size: 15px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+#godziny-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 12px 0 0;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  width: 100%;
+}
+
+#godziny-nav button {
+  background-color: rgba(255,255,255,0.2);
+  color: white;
+  border: solid rgba(255,255,255,0.4) 1px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  transition: background 0.2s;
+}
+
+#godziny-nav button:hover {
+  background-color: rgba(255,255,255,0.4);
+}
+
+#godzina-label {
+  font-size: 14px;
+  color: rgba(255,255,255,0.9);
+  min-width: 120px;
+  text-align: center;
+}
+
+#blad {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.85);
+  text-align: center;
+  padding: 10px;
+}
+
+.ukryty {
+  display: none !important;
+}
