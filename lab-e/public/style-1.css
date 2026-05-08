@@ -1,0 +1,162 @@
+body {
+  background: linear-gradient(180deg, #070787 0%, #020226 100%);
+  color: #ffffff;
+}
+
+a {
+  color: #f0c674;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+a:hover {
+  color: #ffffff;
+}
+
+main, header, footer {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+header {
+  background-image: linear-gradient(rgba(11, 29, 38, 0.35), rgba(11, 29, 38, 0.9)), url("zdjecie_header.jpg");
+  background-size: cover;
+  background-position: center;
+  padding-top: 30px;
+  padding-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+header > div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 200px;
+}
+
+nav, ul {
+  display: flex;
+  gap: 30px;
+}
+
+#start {
+  margin: auto;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  text-align: center;
+}
+
+#start p {
+  max-width: 800px;
+}
+
+main {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+main section {
+  margin-bottom: 50px;
+}
+
+main article {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#trasy article {
+  gap: 80px;
+}
+
+#trasy article > div:last-child {
+  margin-left: 200px;
+}
+
+#trasy article > div:last-child p:first-child {
+  max-width: 1000px;
+}
+
+main article p:first-child {
+  color: #f0c674;
+  font-size: 5rem;
+  font-weight: bold;
+  margin-bottom: -30px;
+}
+
+main article h2 {
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+  max-width: 600px;
+}
+
+main article h3 {
+  font-size: 1.3rem;
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+main article p {
+  margin-bottom: 16px;
+  max-width: 550px;
+}
+
+footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 60px;
+  padding-bottom: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer h2,
+footer h3 {
+  margin-bottom: 20px;
+  color: #f0c674;
+}
+
+footer li , footer ul, footer a{
+  color: #ffffff;
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer li {
+  margin-bottom: 10px;
+}
+
+/*Część responsywna zrobiona przez AI*/
+@media (max-width: 768px) {
+  main article {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  main article img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  main article p:first-child {
+    font-size: 3rem;
+  }
+
+  header > div:first-child {
+    flex-direction: column;
+  }
+
+  nav ul {
+    gap: 30px;
+  }
+
+  main article h2 {
+    font-size: 2rem;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+}

@@ -115,8 +115,10 @@ function pobierzAktualna(miasto) {
   xhr.onload = function () {
     if (xhr.status === 200) {
       const dane = JSON.parse(xhr.responseText);
-      wyswietlAktualna(dane);
 
+      console.log('XHR odpowiedz:', dane);
+
+      wyswietlAktualna(dane);
       pobierzPrognozeFetch(miasto);
 
     } else if (xhr.status === 404) {
