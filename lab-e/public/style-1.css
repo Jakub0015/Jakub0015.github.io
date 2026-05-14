@@ -66,6 +66,14 @@ main article {
   justify-content: space-between;
 }
 
+img {
+  width: 100%;
+  max-width: 500px;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
 #trasy article {
   gap: 80px;
 }
@@ -128,7 +136,6 @@ footer li {
   margin-bottom: 10px;
 }
 
-/*Część responsywna zrobiona przez AI*/
 @media (max-width: 768px) {
   main article {
     flex-direction: column;

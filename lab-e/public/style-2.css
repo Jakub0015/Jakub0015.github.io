@@ -109,7 +109,14 @@ footer li {
   margin-bottom: 5px;
 }
 
-/*Linia 113 napisana przez AI*/
+img {
+  width: 100%;
+  max-width: 500px;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
 @media (max-width: 768px) {
   main article {
     flex-direction: column;
