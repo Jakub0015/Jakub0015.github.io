@@ -1,0 +1,102 @@
+<?php
+namespace App\Model;
+use App\Service\Config;
+
+class Book
+{
+    private ?int $id = null;
+    private ?string $title = null;
+    private ?string $author = null;
+    private ?int $year = null;
+
+    public function getId(): ?int { return $this->id; }
+    public function setId(?int $id): Book { $this->id = $id; return $this; }
+
+    public function getTitle(): ?string { return $this->title; }
+    public function setTitle(?string $title): Book { $this->title = $title; return $this; }
+
+    public function getAuthor(): ?string { return $this->author; }
+    public function setAuthor(?string $author): Book { $this->author = $author; return $this; }
+
+    public function getYear(): ?int { return $this->year; }
+    public function setYear(?int $year): Book { $this->year = $year; return $this; }
+
+    public static function fromArray($array): Book
+    {
+        $book = new self();
+        $book->fill($array);
+        return $book;
+    }
+
+    public function fill($array): Book
+    {
+        if (isset($array['id']) && !$this->getId()) {
+            $this->setId($array['id']);
+        }
+        if (isset($array['title'])) {
+            $this->setTitle($array['title']);
+        }
+        if (isset($array['author'])) {
+            $this->setAuthor($array['author']);
+        }
+        if (isset($array['year'])) {
+            $this->setYear($array['year']);
+        }
+        return $this;
+    }
+
+    public static function findAll(): array
+    {
+        $pdo = new \PDO(Config::get('db_dsn'), Config::get('db_user'), Config::get('db_pass'));
+        $statement = $pdo->prepare('SELECT * FROM book');
+        $statement->execute();
+        $books = [];
+        foreach ($statement->fetchAll(\PDO::FETCH_ASSOC) as $row) {
+            $books[] = self::fromArray($row);
+        }
+        return $books;
+    }
+
+    public static function find($id): ?Book
+    {
+        $pdo = new \PDO(Config::get('db_dsn'), Config::get('db_user'), Config::get('db_pass'));
+        $statement = $pdo->prepare('SELECT * FROM book WHERE id = :id');
+        $statement->execute(['id' => $id]);
+        $row = $statement->fetch(\PDO::FETCH_ASSOC);
+        if (!$row) return null;
+        return self::fromArray($row);
+    }
+
+    public function save(): void
+    {
+        $pdo = new \PDO(Config::get('db_dsn'), Config::get('db_user'), Config::get('db_pass'));
+        if (!$this->getId()) {
+            $statement = $pdo->prepare('INSERT INTO book (title, author, year) VALUES (:title, :author, :year)');
+            $statement->execute([
+                'title' => $this->getTitle(),
+                'author' => $this->getAuthor(),
+                'year' => $this->getYear(),
+            ]);
+            $this->setId($pdo->lastInsertId());
+        } else {
+            $statement = $pdo->prepare('UPDATE book SET title = :title, author = :author, year = :year WHERE id = :id');
+            $statement->execute([
+                ':title' => $this->getTitle(),
+                ':author' => $this->getAuthor(),
+                ':year' => $this->getYear(),
+                ':id' => $this->getId(),
+            ]);
+        }
+    }
+
+    public function delete(): void
+    {
+        $pdo = new \PDO(Config::get('db_dsn'), Config::get('db_user'), Config::get('db_pass'));
+        $statement = $pdo->prepare('DELETE FROM book WHERE id = :id');
+        $statement->execute([':id' => $this->getId()]);
+        $this->setId(null);
+        $this->setTitle(null);
+        $this->setAuthor(null);
+        $this->setYear(null);
+    }
+}
