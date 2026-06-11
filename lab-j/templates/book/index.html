@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}Lista książek{% endblock %}
+
+{% block content %}
+<h1>Lista książek</h1>
+
+<a class="btn btn-primary" href="/book/create">+ Dodaj książkę</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Tytuł</th>
+            <th>Autor</th>
+            <th>Rok</th>
+            <th>Akcje</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for book in books %}
+        <tr>
+            <td>{{ book["id"] }}</td>
+            <td>{{ book["title"] }}</td>
+            <td>{{ book["author"] }}</td>
+            <td>{{ book["year"] }}</td>
+            <td class="actions">
+                <a class="btn" href="/book/{{ book['id'] }}">Podgląd</a>
+                <a class="btn" href="/book/{{ book['id'] }}/edit">Edytuj</a>
+                <form class="inline-form" action="/book/{{ book['id'] }}/delete" method="post"
+                      onsubmit="return confirm('Usunąć tę książkę?');">
+                    <button class="btn btn-danger" type="submit">Usuń</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
