@@ -1,0 +1,40 @@
+:root {
+    --brand: #8b5e3c;
+    --brand-dark: #5e3d23;
+    --accent: #c0693a;
+    --bg-soft: #f7f1ea;
+}
+
+body {
+    background-color: var(--bg-soft);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.bg-brand {
+    background-color: var(--brand) !important;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: .5px;
+}
+
+.footer-custom {
+    background-color: var(--brand-dark);
+    color: var(--bg-soft);
+}
+
+h1 {
+    color: var(--brand-dark);
+    font-weight: 700;
+}
+
+.btn-primary {
+    background-color: var(--accent);
+    border-color: var(--accent);
+}
+
+.btn-primary:hover {
+    background-color: var(--brand-dark);
+    border-color: var(--brand-dark);
+}
